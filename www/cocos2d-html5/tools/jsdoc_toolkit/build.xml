@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Test-JsDoc" default="jsdoc" basedir=".">
+
+    <property name="src.dir" location="${basedir}/../../cocos2d"/>
+
+    <property name="jsdoc.dir" location="${basedir}"/>
+    <property name="rhino.dir" location="${basedir}/java/classes"/>
+    <property name="out.dir" location="${basedir}/out/jsdoc"/>
+
+    <!-- Define the classpath for the Apache Ant task - needs Rhino as well. -->
+    <path id="jsdoc.classpath">
+        <pathelement path="${rhino.dir}/js.jar"/>
+        <pathelement path="${rhino.dir}/jsdoc-toolkit-ant-task-1.1.2.jar"/>
+    </path>
+
+    <!-- Define the Ant Task -->
+    <taskdef name="jsdoctoolkit" classname="uk.co.darrenhurley.ant.tasks.JsDocToolkit" classpathref="jsdoc.classpath"/>
+
+    <!-- This is the default target - it generates the JsDoc documents -->
+    <target name="jsdoc" depends="" description="Generate JsDoc.">
+        <jsdoctoolkit jsdochome="${jsdoc.dir}/" template="WouterBos-Codeview-a091d81" outputdir="${out.dir}" includeprivate="false">
+            <fileset dir="${src.dir}">
+                <include name="platform/CCClass.js"/>
+                <include name="platform/CCCommon.js"/>
+                <include name="platform/platform.js"/>
+                <include name="platform/miniFramework.js"/>
+                <include name="platform/ZipUtils.js"/>
+                <include name="platform/base64.js"/>
+                <include name="platform/gzip.js"/>
+                <include name="platform/CCMacro.js"/>
+                <include name="platform/CCFileUtils.js"/>
+                <include name="platform/CCTypes.js"/>
+                <include name="platform/CCImage.js"/>
+                <include name="cocoa/CCGeometry.js"/>
+                <include name="platform/CCConfig.js"/>
+                <include name="cocoa/CCNS.js"/>
+                <include name="cocoa/CCAffineTransform.js"/>
+                <include name="support/CCPointExtension.js"/>
+                <include name="support/CCPNGReader.js"/>
+                <include name="support/CCTIFFReader.js"/>
+                <include name="support/component/CCComponent.js"/>
+                <include name="support/component/CCComponentContainer.js"/>
+                <include name="base_nodes/CCNode.js"/>
+                <include name="base_nodes/CCdomNode.js"/>
+                <include name="base_nodes/CCAtlasNode.js"/>
+                <include name="textures/CCTexture2D.js"/>
+                <include name="textures/CCTextureCache.js"/>
+                <include name="textures/CCTextureAtlas.js"/>
+                <include name="shaders/CCGLProgram.js"/>
+                <include name="shaders/CCGLStateCache.js"/>
+                <include name="shaders/CCShaderCache.js"/>
+                <include name="misc_nodes/CCRenderTexture.js"/>
+                <include name="misc_nodes/CCProgressTimer.js"/>
+                <include name="actions/CCAction.js"/>
+                <include name="actions/CCActionInterval.js"/>
+                <include name="actions/CCActionInstant.js"/>
+                <include name="actions/CCActionCatmullRom.js"/>
+                <include name="actions/CCActionManager.js"/>
+                <include name="actions/CCActionProgressTimer.js"/>
+                <!--<include name="actions/CCActionCamera.js"/>-->
+                <include name="actions/CCActionEase.js"/>
+                <!-- <include name="actions/CCActionGrid.js"/> -->
+                <include name="actions/CCActionTiledGrid.js"/>
+                <include name="layers_scenes_transitions_nodes/CCScene.js"/>
+                <include name="layers_scenes_transitions_nodes/CCLayer.js"/>
+                <include name="layers_scenes_transitions_nodes/CCTransition.js"/>
+                <include name="layers_scenes_transitions_nodes/CCTransitionProgress.js"/>
+                <include name="layers_scenes_transitions_nodes/CCTransitionPageTurn.js"/>
+                <include name="sprite_nodes/CCSprite.js"/>
+                <include name="sprite_nodes/CCAnimation.js"/>
+                <include name="sprite_nodes/CCAnimationCache.js"/>
+                <include name="sprite_nodes/CCSpriteFrame.js"/>
+                <include name="sprite_nodes/CCSpriteFrameCache.js"/>
+                <include name="sprite_nodes/CCSpriteBatchNode.js"/>
+                <include name="label_nodes/CCLabelAtlas.js"/>
+                <include name="label_nodes/CCLabelTTF.js"/>
+                <include name="label_nodes/CCLabelBMFont.js"/>
+                <include name="particle_nodes/CCParticleSystem.js"/>
+                <include name="particle_nodes/CCParticleExamples.js"/>
+                <include name="touch_dispatcher/CCTouchDelegateProtocol.js"/>
+                <include name="touch_dispatcher/CCTouchHandler.js"/>
+                <include name="touch_dispatcher/CCTouchDispatcher.js"/>
+                <include name="keyboard_dispatcher/CCKeyboardDelegate.js"/>
+                <include name="keyboard_dispatcher/CCKeyboardDispatcher.js"/>
+                <include name="text_input_node/CCIMEDispatcher.js"/>
+                <include name="text_input_node/CCTextFieldTTF.js"/>
+                <include name="CCDirector.js"/>
+                <include name="CCCamera.js"/>
+                <include name="CCScheduler.js"/>
+                <include name="CCLoader.js"/>
+                <include name="CCDrawingPrimitives.js"/>
+                <include name="platform/CCApplication.js"/>
+                <include name="platform/CCSAXParser.js"/>
+                <include name="platform/AppControl.js"/>
+                <include name="menu_nodes/CCMenuItem.js"/>
+                <include name="menu_nodes/CCMenu.js"/>
+                <include name="tileMap_parallax_nodes/CCTMXTiledMap.js"/>
+                <include name="tileMap_parallax_nodes/CCTMXXMLParser.js"/>
+                <include name="tileMap_parallax_nodes/CCTMXObjectGroup.js"/>
+                <include name="tileMap_parallax_nodes/CCTMXLayer.js"/>
+                <include name="tileMap_parallax_nodes/CCParallaxNode.js"/>
+                <include name="../CocosDenshion/SimpleAudioEngine.js"/>
+            </fileset>
+
+            <fileset dir="${basedir}/../../CocosDenshion">
+                <include name="SimpleAudioEngine.js"/>
+            </fileset>
+
+            <fileset dir="${basedir}/../../extensions">
+                <include name="CocoStudio/CocoStudio.js"/>
+                <include name="CocoStudio/Armature/utils/CCArmatureDataManager.js"/>
+                <include name="CocoStudio/Armature/datas/CCDatas.js"/>
+                <include name="CocoStudio/Armature/display/CCSkin.js"/>
+                <include name="CocoStudio/Armature/animation/CCProcessBase.js"/>
+                <include name="CocoStudio/Armature/animation/CCTween.js"/>
+                <include name="CocoStudio/Armature/animation/CCArmatureAnimation.js"/>
+                <include name="CocoStudio/Armature/physics/CCColliderDetector.js"/>
+                <include name="CocoStudio/Armature/CCArmature.js"/>
+                <include name="CocoStudio/Armature/CCBone.js"/>
+                <include name="CocoStudio/Action/CCActionManager.js"/>
+                <include name="CocoStudio/Components/CCComAttribute.js"/>
+                <include name="CocoStudio/Components/CCComAudio.js"/>
+                <include name="CocoStudio/Components/CCComController.js"/>
+                <include name="CocoStudio/Components/CCComRender.js"/>
+                <include name="CocoStudio/GUI/BaseClasses/UIWidget.js"/>
+                <include name="CocoStudio/GUI/Layouts/UILayout.js"/>
+                <include name="CocoStudio/GUI/Layouts/UILayoutParameter.js"/>
+                <include name="CocoStudio/GUI/Layouts/UILayoutDefine.js"/>
+                <include name="CocoStudio/GUI/System/UIHelper.js"/>
+                <include name="CocoStudio/GUI/System/UILayer.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UIButton.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UICheckBox.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UIImageView.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UILabel.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UILabelAtlas.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UILabelBMFont.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UILoadingBar.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UISlider.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/UITextField.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/ScrollWidget/UIScrollView.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/ScrollWidget/UIListView.js"/>
+                <include name="CocoStudio/GUI/UIWidgets/ScrollWidget/UIPageView.js"/>
+                <include name="CocoStudio/Reader/GUIReader.js"/>
+                <include name="CocoStudio/Reader/SceneReader.js"/>
+            </fileset>
+        </jsdoctoolkit>
+    </target>
+
+    <!-- Neat and Tidy, Tidy and Neat - best to clean up afterwards... -->
+    <target name="clean" description="Cleanup everything this build script creates.">
+        <delete dir="${out.dir}"/>
+    </target>
+</project>
