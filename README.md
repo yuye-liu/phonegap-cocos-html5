@@ -1,4 +1,6 @@
 phonegap-cocos-html5
 ====================
 
-Using phonegap to add html5's widget communicate with cocos-html5's widget
+The setup and using tutorial please click here
+
+https://github.com/yuye-liu/phonegap-cocos-html5/wiki/phonegap-cocos-html5 
